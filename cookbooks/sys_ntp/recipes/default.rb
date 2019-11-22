@@ -63,7 +63,7 @@ log "  Update time using ntpdate and ntp server #{first_ntp_server}..."
 bash "update time" do
   flags "-ex"
   code <<-EOH
-    ntpdate #{first_ntp_server}
+    ntpdate -du #{first_ntp_server}
   EOH
 end
 
